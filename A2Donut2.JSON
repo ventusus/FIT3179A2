@@ -1,0 +1,39 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+      "text": "Unemployment Rate by Age Group (2024)",
+      "font": "Georgia", 
+      "fontSize": 20,             
+      "fontStyle": "normal",     
+      "fontWeight": "bold",       
+      "anchor": "middle",          
+      "color": "black"             
+    },
+    "config": {
+    "background": "#f0f4f8"
+  },
+    "data": {
+      "values": [
+        {"age_group": "18-24", "percentage": 38.77},
+        {"age_group": "25-35", "percentage": 21.13},
+        {"age_group": "36+", "percentage": 40.1}
+      ]
+    },
+    "mark": {
+      "type": "arc", 
+      "innerRadius": 50,  
+      "outerRadius": 110
+    },
+    "encoding": {
+      "theta": {"field": "percentage", "type": "quantitative", "stack": true},
+      "color": {"field": "age_group", "type": "nominal","scale": {
+        "domain": ["18-24", "25-35", "36+"],
+        "range": ["#D9514EFF","#2A2B2DFF ", "#2DA8D8FF "]  
+      }, "legend": {"title": "Age Group"}},
+      "tooltip": [
+        {"field": "age_group", "type": "nominal", "title": "Age Group"},
+        {"field": "percentage", "type": "quantitative", "title": "Unemployment Rate (%)", "format": ".2f"}
+      ]
+    }
+  }
+  

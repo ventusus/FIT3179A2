@@ -1,0 +1,43 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+      "text": "Unemployment Rate by Gender (2024)",
+      "font": "Georgia", 
+      "fontSize": 20,             
+      "fontStyle": "normal",     
+      "fontWeight": "bold",       
+      "anchor": "middle",          
+      "color": "black"             
+    },
+    "config": {
+    "background": "#f0f4f8"
+  },
+    "data": {
+      "values": [
+        {"gender": "Female", "percentage": 50.25},
+        {"gender": "Male", "percentage": 49.75}
+      ]
+    },
+    "mark": {
+      "type": "arc", 
+      "innerRadius": 50,  
+      "outerRadius": 110
+    },
+    "encoding": {
+    "theta": {"field": "percentage", "type": "quantitative", "stack": true},
+    "color": {
+      "field": "gender", 
+      "type": "nominal",
+      "scale": {
+        "domain": ["Male", "Female"],
+        "range": ["#1E90FF","#FF69B4"]  
+      },
+      "legend": {"title": "Gender"}
+    },
+      "tooltip": [
+        {"field": "gender", "type": "nominal", "title": "Gender"},
+        {"field": "percentage", "type": "quantitative", "title": "Unemployment Rate (%)", "format": ".2f"}
+      ]
+    }
+  }
+  
