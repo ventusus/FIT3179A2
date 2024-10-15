@@ -49,8 +49,8 @@
 
         .annotation-box {
             position: absolute;
-            bottom: -110px;
-            left: 130px;
+            bottom: 130px;
+            left: 110px;
             width: 250px;
             background-color: rgba(255, 255, 255, 0.9);
             padding: 10px;
@@ -81,6 +81,8 @@
             position: relative;
             
         }
+
+        
 
         #piechart, #piechart2 {
             width: 45%; /* Adjust width of the pie charts */
@@ -200,9 +202,12 @@
     </p>
 
     <div class="vis-container">
-        <div id="map" class="map-container"></div> <!-- Container for the map -->
-        <div class="annotation-box">
+        
+        <div class="map-container">
+            <div id="map"></div>  <!-- Container for the map -->
+            <div class="annotation-box">
             2020 saw high unemployment due to the COVID-19 pandemic. Many industries faced disruptions leading to a sharp rise in joblessness worldwide.
+            </div>
         </div>
 
         <!-- Place the slider directly below the map -->
